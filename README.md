@@ -42,7 +42,7 @@ uv pip install -e '.[dev]' --index-url https://gitlab.mpcdf.mpg.de/api/v4/projec
 
 ### Run the tests
 
-You can run locally the test:
+You can run locally the tests:
 ```sh
 python -m pytest -sv tests
 ```
