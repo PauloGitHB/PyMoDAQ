@@ -35,7 +35,7 @@ class Parameters():
         super().normalize(archive, logger)
 
 
-class XMLString(EntryData):
+class XML(EntryData):
     name = Quantity(
         type=str, a_eln=ELNAnnotation(component=ELNComponentEnum.StringEditQuantity)
     )
