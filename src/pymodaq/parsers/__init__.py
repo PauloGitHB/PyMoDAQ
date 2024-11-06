@@ -6,9 +6,9 @@ class NewParserEntryPoint(ParserEntryPoint):
     parameter: int = Field(0, description='Custom configuration parameter')
 
     def load(self):
-        from pymodaq.parsers.parser import NewParser
+        from pymodaq.parsers.parser import XMLParser
 
-        return NewParser(**self.dict())
+        return XMLParser(**self.dict())
 
 
 parser_entry_point = NewParserEntryPoint(

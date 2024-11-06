@@ -1,0 +1,6 @@
+<custom_settings type="group" title="custom_settings" visible="1" removable="0" readonly="0">
+        <numbers type="group" title="Numbers:" visible="1" removable="0" readonly="0">
+            <afloat type="float" title="Standard float" visible="1" removable="0" readonly="0">20.0</afloat>
+            <abool type="bool" title="Standard bool" visible="1" removable="0" readonly="0">1</abool>
+        </numbers>
+    </custom_settings>
