@@ -1,6 +1,55 @@
 <custom_settings type="group" title="custom_settings" visible="1" removable="0" readonly="0">
-        <numbers type="group" title="Numbers:" visible="1" removable="0" readonly="0">
-            <afloat type="float" title="Standard float" visible="1" removable="0" readonly="0">20.0</afloat>
-            <abool type="bool" title="Standard bool" visible="1" removable="0" readonly="0">1</abool>
-        </numbers>
-    </custom_settings>
+    <groups type="group" title="Groups:" visible="1" removable="0" readonly="0">
+        <agroup type="group" title="A visible group:" visible="1" removable="0" readonly="0" />
+        <bgroup type="group" title="An hidden group:" visible="0" removable="0" readonly="0" />
+        <booleans_group type="bool" title="A bool with children:" visible="1" removable="0" readonly="0">0<a_bool_in_a_bool type="bool" title="A bool in a bool" visible="1" removable="0" readonly="0">1</a_bool_in_a_bool>
+            <aboolpush type="bool_push" title="A push with children" visible="1" removable="0" readonly="0" label="action">1<atte_in_a_group type="str" title="A string in a group" visible="1" removable="0" readonly="0">this is a string you can edit</atte_in_a_group>
+            </aboolpush>
+        </booleans_group>
+    </groups>
+    <numbers type="group" title="Numbers:" visible="1" removable="0" readonly="0">
+        <afloat type="float" title="Standard float" visible="1" removable="0" readonly="0">20.0</afloat>
+        <linearslidefloat type="slide" title="Linear Slide float" visible="1" removable="0" readonly="0">50</linearslidefloat>
+        <linearslidefloatlimits type="slide" title="Linear Slide float w limits" visible="1" removable="0" readonly="0" limits="(24, 123)">50</linearslidefloatlimits>
+        <linearslideint type="slide" title="Linear int Slide" visible="1" removable="0" readonly="0">50</linearslideint>
+        <linearslidewithsuffixandsiPrefix type="slide" title="Linear Slide with suffix" visible="1" removable="0" readonly="0">50</linearslidewithsuffixandsiPrefix>
+        <logslidefloat type="slide" title="Log Slide float" visible="1" removable="0" readonly="0">50</logslidefloat>
+    </numbers>
+    <booleans type="group" title="Booleans:" visible="1" removable="0" readonly="0">
+        <abool type="bool" title="Standard bool" visible="1" removable="0" readonly="0">1</abool>
+        <aboolpush type="bool_push" title="bool push" visible="1" removable="0" readonly="0" label="action">1</aboolpush>
+        <aled type="led" title="A led" visible="1" removable="0" readonly="0">0</aled>
+        <anotherled type="led_push" title="A led" visible="1" removable="0" readonly="0">1</anotherled>
+    </booleans>
+    <datetimes type="group" title="DateTime:" visible="1" removable="0" readonly="0">
+        <atime type="time" title="Time:" visible="1" removable="0" readonly="0">PyQt5.QtCore.QTime(14, 1)</atime>
+        <adate type="date" title="Date:" visible="1" removable="0" readonly="0">1730934000000</adate>
+        <adatetime type="date_time" title="DateTime:" visible="1" removable="0" readonly="0">1730984505233</adatetime>
+    </datetimes>
+    <action type="action" title="An action" visible="1" removable="0" readonly="0" />
+    <lists type="group" title="Lists:" visible="1" removable="0" readonly="0">
+        <alist type="list" title="Standard list:" visible="1" removable="0" readonly="0" limits="['a value', 'another one']">str('a value')</alist>
+        <anotherlist type="list" title="List with add:" visible="1" removable="0" readonly="0" limits="['a value', 'another one']" show_pb="1">str('a value')</anotherlist>
+        <dict_list type="list" title="List defined from a dict:" visible="1" removable="0" readonly="0" limits="{'xaxis': 0, 'yaxis': [0, 1, 2]}">int(0)</dict_list>
+    </lists>
+    <browser type="group" title="Browsing files:" visible="1" removable="0" readonly="0">
+        <afile type="browsepath" title="Look for a file:" visible="1" removable="0" readonly="0" filetype="1" />
+        <adir type="browsepath" title="Look for a dir:" visible="1" removable="0" readonly="0" filetype="0" />
+    </browser>
+    <itemss type="group" title="Selectable items:" visible="1" removable="0" readonly="0">
+        <items type="itemselect" title="Selectable items" visible="1" removable="0" readonly="0" all_items="['item1', 'item2', 'item3', 'item4', 'item5']">['item2']</items>
+        <itemsbis type="itemselect" title="Selectable items" visible="1" removable="0" readonly="0" show_pb="1" all_items="['item1', 'item2', 'item3']">['item1', 'item3']</itemsbis>
+        <itemsbisbis type="itemselect" title="Removable items" visible="1" removable="0" readonly="0" all_items="['item1', 'item2', 'item3']">['item2']</itemsbisbis>
+        <itemscheckable type="itemselect" title="Checkable items" visible="1" removable="0" readonly="0" show_pb="1" all_items="['item1', 'item2', 'item3']">['item2']</itemscheckable>
+        <itemsdragablecheckable type="itemselect" title="Dragable items" visible="1" removable="0" readonly="0" all_items="['item1', 'item2', 'item3']">['item2']</itemsdragablecheckable>
+    </itemss>
+    <texts type="group" title="Plain text:" visible="1" removable="0" readonly="0">
+        <atte type="str" title="Standard str" visible="1" removable="0" readonly="0">this is a string you can edit</atte>
+        <text type="text" title="Plain text" visible="1" removable="0" readonly="0">this is some text</text>
+        <textpb type="text_pb" title="Plain text" visible="1" removable="0" readonly="0">this is some text</textpb>
+    </texts>
+    <tables type="group" title="Tables:" visible="1" removable="0" readonly="0">
+        <tablewidget type="table" title="Table widget" visible="1" removable="0" readonly="0">OrderedDict([('key1', 'data1'), ('key2', 24.0)])</tablewidget>
+        <tabular_table type="table_view" title="Table view" visible="1" removable="0" readonly="0">{"classname": "TableModel", "module": "pymodaq_gui.utils.widgets.table", "data": [[0.1, 0.2, 0.3]], "header": ["value1", "value2", "value3"]}</tabular_table>
+    </tables>
+</custom_settings>
